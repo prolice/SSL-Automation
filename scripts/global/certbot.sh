@@ -5,7 +5,6 @@ foundry_file="foundryvtt.conf"
 
 #install nginx && unzip
 sudo apt-get install nginx unzip
-sudo rm /etc/nginx/sites-enabled/default
 sudo mkdir /var/log/nginx/foundry
 cp SSL-Automation/files/nginx/${foundry_file} /etc/nginx/conf.d/foundryvtt.conf
 sudo sed -i "s/YOURSUBDOMAINHERE/${subdomain}/g" /etc/nginx/conf.d/foundryvtt.conf
