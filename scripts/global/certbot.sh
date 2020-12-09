@@ -7,7 +7,7 @@ foundry_file="foundryvtt.conf"
 sudo apt-get install nginx unzip
 sudo rm /etc/nginx/sites-enabled/default
 sudo mkdir /var/log/nginx/foundry
-cp aws-foundry-ssl/files/nginx/${foundry_file} /etc/nginx/conf.d/foundryvtt.conf
+cp prolice-foundry-ssl/SSL-Automation/files/nginx/${foundry_file} /etc/nginx/conf.d/foundryvtt.conf
 sudo sed -i "s/YOURSUBDOMAINHERE/${subdomain}/g" /etc/nginx/conf.d/foundryvtt.conf
 sudo sed -i "s/YOURDOMAINHERE/${fqdn}/g" /etc/nginx/conf.d/foundryvtt.conf
 
@@ -36,7 +36,7 @@ crontab -l | { cat; echo "@reboot    /usr/bin/certbot renew --quiet"; } | cronta
 crontab -l | { cat; echo "0 12 * * *     /usr/bin/certbot renew --quiet"; } | crontab -
 
 sudo sed -i -e "s|location / {|include conf.d/drop;\n\n\tlocation / {|g" /etc/nginx/conf.d/foundryvtt.conf
-sudo cp aws-foundry-ssl/files/nginx/drop /etc/nginx/conf.d/drop
+sudo cp prolice-foundry-ssl/SSL-Automation/files/nginx/drop /etc/nginx/conf.d/drop
 sudo systemctl restart nginx
 
 # configure foundry to use ssl
