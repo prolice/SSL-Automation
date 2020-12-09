@@ -14,10 +14,6 @@ Ce projet est fait pour vous.
 
 Le but à moyen terme est d'intégrer ce script dans une configuration automatique plus grande.
 
-Quelques modifs sont encore en cours afin que le script puisse utiliser des installation Foundry VTT aplus personnalisées.
-
-Par exemple: en incluant la possibilité de changer de dossier pendant l'installation (TODO)
-
 ## Comment ça marche
 Ouvrez un terminal sous ubuntu
 
