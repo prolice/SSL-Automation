@@ -15,8 +15,8 @@ sudo systemctl start nginx
 sudo systemctl enable nginx
 
 # configure foundry for nginx
-sudo sed -i "s/\"hostname\":.*/\"hostname\": \"${subdomain}\.${fqdn}\",/g" ${foundrydata}/options.json
-sudo sed -i 's/"proxyPort":.*/"proxyPort": "80",/g' ${foundrydata}/options.json
+sudo sed -i "s/\"hostname\":.*/\"hostname\": \"${subdomain}\.${fqdn}\",/g" .local/share/FoundryVTT/Config/options.json
+sudo sed -i 's/"proxyPort":.*/"proxyPort": "80",/g' .local/share/FoundryVTT/Config/options.json
 
 systemctl restart nginx
 
@@ -34,5 +34,5 @@ sudo cp SSL-Automation/files/nginx/drop /etc/nginx/conf.d/drop
 sudo systemctl restart nginx
 
 # configure foundry to use ssl
-sudo sed -i 's/"proxyPort":.*/"proxyPort": "443",/g' ${foundrydata}/options.json
-sudo sed -i 's/"proxySSL":.*/"proxySSL": true,/g' ${foundrydata}/options.json
+sudo sed -i 's/"proxyPort":.*/"proxyPort": "443",/g' .local/share/FoundryVTT/Config/options.json
+sudo sed -i 's/"proxySSL":.*/"proxySSL": true,/g' .local/share/FoundryVTT/Config/options.json
