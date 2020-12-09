@@ -23,4 +23,4 @@ echo 'currentuser='$(whoami) >> foundryssl/variables.sh
 sudo chown root:root foundryssl/variables.sh
 sudo chmod 700 foundryssl/variables.sh
 
-sudo ./certbot.sh
+sudo ./SSL-Automation/scripts/global/certbot.sh
