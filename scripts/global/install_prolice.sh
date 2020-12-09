@@ -6,10 +6,6 @@ echo 'Veuillez renseigner le chemin d accès à votre dossier data'
 read -p 'Foundry Data Path=' -e -i '.local/share/FoundryVTT/Config' foundrydata
 echo 'foundrydata='$foundrydata >> foundryssl/variables.sh
 
-echo 'Veuilez entrer votre nom de registrar : <registrar.domain.com>'
-read domain_registrar
-echo 'domain_registrar='$domain_registrar >> foundryssl/variables.sh
-
 echo 'Veuillez entrer votre FQDN (Full Qualified Domain Name) : <domain.com>'
 read fqdn
 echo 'fqdn='$fqdn >> foundryssl/variables.sh
