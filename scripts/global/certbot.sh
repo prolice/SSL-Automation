@@ -25,11 +25,6 @@ sudo apt install certbot python3-certbot-nginx
 # install certificates
 sudo certbot --agree-tos -n --nginx -d ${subdomain}.${fqdn} -m ${email} --no-eff-email
 
-# install certificates for optional webserver
-if [[ ${webserver_bool} == 'True' ]]; then
-    sudo certbot --agree-tos -n --nginx -d ${fqdn},www.${fqdn} -m ${email} --no-eff-email
-fi
-
 # configure to autorenew certs
 crontab -l | { cat; echo "@reboot    /usr/bin/certbot renew --quiet"; } | crontab -
 crontab -l | { cat; echo "0 12 * * *     /usr/bin/certbot renew --quiet"; } | crontab -
